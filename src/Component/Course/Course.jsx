@@ -30,7 +30,33 @@ const Course = () => {
 
         const onTimeAdd = courseName.find(item => item.id == course.id)
 
-       
+        if (onTimeAdd) {
+            return toast('Already Select This Course ', {
+                position: "top-center mt-30",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } else {
+
+            courseName.forEach((item) => {
+                sum += item.price;
+            });
+
+            courseName.forEach((credit) => {
+                credit_total += credit.credit;
+            })
+
+           
+
+            setCourseName([...courseName, course]);
+            setTotalPrice(sum);
+            setTotalCredit(credit_total);
+            setCreditRemaininghour(totoalRemainng);
+        }
 
     }
 
@@ -42,7 +68,7 @@ const Course = () => {
 
             <div className="flex">
 
-                <div className="grid grid-cols-3 gap-6 mr-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mr-6">
 
                     {
                         showCourse.map(course => (
