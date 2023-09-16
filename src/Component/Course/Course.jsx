@@ -52,7 +52,7 @@ const Course = () => {
 
             const totoalRemainng = remainingHour - credit_total;
             if (totoalRemainng < 0) {
-                return toast.warn('Oops Remaining Hour Is Low!! And Total Credit Hour Not Available', {
+                return toast.warn('Oops Remaining Hour is Low!! And Total Credit Hour is full', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,

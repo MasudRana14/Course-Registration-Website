@@ -15,7 +15,7 @@ const CourseDetail = ({ courseName, totalprice, credittotal, creditremaininghour
 
                 {
                     courseName.map((course) => (
-                        <li key={course.id}>{course.title}</li>
+                        <li className="list-decimal list-inside" key={course.id}>{course.title}</li>
 
                     ))
                 }
@@ -27,7 +27,7 @@ const CourseDetail = ({ courseName, totalprice, credittotal, creditremaininghour
             </div>
 
             <div className="mt-4">
-                <h3 className="text-base font-semibold ">Total Price : ${totalprice} USD</h3>
+                <h3 className="text-base font-semibold">Total Price : ${totalprice} USD</h3>
             </div>
         </div>
     );
