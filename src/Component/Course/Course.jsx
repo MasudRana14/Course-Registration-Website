@@ -50,7 +50,19 @@ const Course = () => {
                 credit_total += credit.credit;
             })
 
-           
+            const totoalRemainng = remainingHour - credit_total;
+            if (totoalRemainng < 0) {
+                return toast.warn('Oops Remaining Hour Is Low!! And Total Credit Hour Not Available', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                   
+                });
+            }
 
             setCourseName([...courseName, course]);
             setTotalPrice(sum);
